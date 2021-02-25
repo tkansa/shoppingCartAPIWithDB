@@ -70,8 +70,8 @@ shoppingCart.put("/:id", (req, res) => {
 shoppingCart.delete("/:id", (req, res) => {
     let id = parseInt(req.params.id);
     pool.query(`DELETE FROM shopping_cart
-                WHERE id=$4`, [id]).then((results) => {
-        res.json(results.rows);
+                WHERE id=$1`, [id]).then((results) => {
+        res.json();
     });
 });
 
